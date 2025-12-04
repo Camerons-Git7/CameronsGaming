@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Website Unblocker</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 20px;
+			background-color: black;
+			/* Changed background color to black */
+			color: #EA4335;
+			/* Changed text color to #EA4335 */
+		}
+
+		iframe {
+			width: 95%;
+			height: 355px;
+			border: 3px solid #EA4335;
+		}
+
+		#urlInput {
+			width: 47.8%;
+			padding: 8px;
+			font-size: 16px;
+			color: #EA4335;
+			/* Changed input text color to match */
+		}
+
+		button {
+			padding: 8px 16px;
+			font-size: 16px;
+			background-color: red;
+			/* Changed button background color to red */
+			color: white;
+			/* Changed button text color to white */
+			border: none;
+			/* Remove default button border */
+			border-radius: 4px;
+			/* Optional: add rounded corners */
+			cursor: pointer;
+			/* Change cursor to pointer */
+			transition: transform 0.1s;
+			/* Smooth transition for the animation */
+		}
+
+		button:active {
+			transform: scale(0.25);
+			/* Scale down the button when clicked */
+		}
+
+		#fullscreenBtn {
+			margin-left: 10px;
+			padding: 8px 16px;
+			font-size: 16px;
+			background-color: red;
+			/* Changed fullscreen button background color to red */
+			color: white;
+			/* Changed fullscreen button text color to white */
+			border: none;
+			/* Remove default button border */
+			border-radius: 4px;
+			/* Optional: add rounded corners */
+			cursor: pointer;
+			/* Change cursor to pointer */
+			transition: transform 0.1s;
+			/* Smooth transition for the animation */
+		}
+
+		#fullscreenBtn:active {
+			transform: scale(0.25);
+			/* Scale down the fullscreen button when clicked */
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>Camerons Website Unblocker</h1>
+
+	<div>
+		<label for="urlInput">Enter URL:</label>
+		<input type="url" id="urlInput" placeholder="https://example.com">
+		<button id="loadBtn">Load</button>
+		<button id="fullscreenBtn">⛶</button>
+	</div>
+
+	<iframe id="myIframe" src=""></iframe>
+
+	<script>
+		const urlInput = document.getElementById('urlInput');
+        const loadBtn = document.getElementById('loadBtn');
+        const myIframe = document.getElementById('myIframe');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+
+        loadBtn.addEventListener('click', function() {
+            const url = urlInput.value;
+            if (url) {
+                myIframe.src = url;
+            } else {
+                alert('You have Just Received 67 Viruses');
+            }
+        });
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (myIframe.requestFullscreen) {
+                myIframe.requestFullscreen();
+            } else if (myIframe.mozRequestFullScreen) { // Firefox
+                myIframe.mozRequestFullScreen();
+            } else if (myIframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+                myIframe.webkitRequestFullscreen();
+            } else if (myIframe.msRequestFullscreen) { // IE/Edge
+                myIframe.msRequestFullscreen();
+            }
+        });
+	</script>
+
+</body>
+
+</html>
